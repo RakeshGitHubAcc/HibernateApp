@@ -30,7 +30,7 @@ public class HibernateMain {
 			ex.printStackTrace();
 		} finally {
 			// close session
-			if (null != session) {
+			if (null != session && session.isConnected()) {
 				session.close();
 			}
 			// terminate session factory, otherwise program won't end

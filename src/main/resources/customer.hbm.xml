@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.learnjava.hibernate.model.Customer" table="Customer">
+		<meta attribute="class-description">
+			This class contains the Customer details.
+		</meta>
+		<id name="id" type="long" column="txn_id">
+			<generator class="foreign">
+				<param name="property">txn</param>
+			</generator>
+		</id>
+		<one-to-one name="txn" class="com.learnjava.hibernate.model.Txn"
+			constrained="true" />
+		<property name="name" type="java.lang.String" column="cust_name" />
+		<property name="email" type="java.lang.String" column="cust_email" />
+		<property name="address" type="java.lang.String" column="cust_address" />
+	</class>
+</hibernate-mapping>

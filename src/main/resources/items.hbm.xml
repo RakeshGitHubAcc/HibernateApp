@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.learnjava.hibernate.model.Items" table="Items">
+		<id name="id" type="long" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="itemId" type="java.lang.String" column="item_id" />
+		<property name="quantity" type="int" column="quantity" />
+		<property name="itemTotal" type="double" column="item_total" />
+		<many-to-one name="cart" class="com.learnjava.hibernate.model.Cart">
+			<column name="cart_id" not-null="true" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

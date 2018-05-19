@@ -11,7 +11,6 @@ import com.learnjava.hibernate.util.HibernateUtil;
 public class HibernateAnnotationMain {
 
 	public static void main(String[] args) {
-
 		Employee1 emp1 = new Employee1();
 		emp1.setName("Rajesh");
 		emp1.setRole("MD");
@@ -31,7 +30,7 @@ public class HibernateAnnotationMain {
 			ex.printStackTrace();
 		} finally {
 			// close session
-			if (null != session) {
+			if (null != session && session.isConnected()) {
 				session.close();
 			}
 			// terminate session factory, otherwise program won't end

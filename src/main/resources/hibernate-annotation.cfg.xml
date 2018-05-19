@@ -24,5 +24,7 @@
 		<!-- <mapping class="org.hibernate.tutorial.annotations.Event"/> -->
 		<property name="hibernate.current_session_context_class">thread</property>
 		<mapping class="com.learnjava.hibernate.model.Employee1" />
+		<mapping class="com.learnjava.hibernate.model.Txn1" />
+		<mapping class="com.learnjava.hibernate.model.Customer1" />
 	</session-factory>
 </hibernate-configuration>
